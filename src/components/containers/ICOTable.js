@@ -9,7 +9,6 @@ import TableSimple from "./../presentational/TableSimple";
 export default class ICOTable extends Component {
   constructor(props) {
     super(props);
-    this.convertToArray = this.convertToArray.bind(this);
     this.state = {
       loading: true
     };
