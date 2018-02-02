@@ -1,0 +1,21 @@
+.table {
+  background-color: #000000;
+}
+
+.table__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+}
+
+.table__cell span {
+  margin: auto;
+}
+
+.table__cell img {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
