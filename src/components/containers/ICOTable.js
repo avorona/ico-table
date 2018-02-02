@@ -16,10 +16,6 @@ export default class ICOTable extends Component {
   }
 
 
-
-
-
-
   componentDidMount() {
     const myInit = {
       method: 'GET',
@@ -32,7 +28,7 @@ export default class ICOTable extends Component {
       .then(
         data => this.setState({
           loading: false,
-          data: this.convertToArray(data),
+          data: this.getIteratableDataset(data),
           baseUrl: data.BaseImageUrl
         })
       )
@@ -45,10 +41,13 @@ export default class ICOTable extends Component {
 
 
   }
-  convertToArray(obj) {
 
+/*
+Get get iteratable dataset to work with
+@param obj 
+*/
+  getIteratableDataset(obj) {
     return Array.from(Object.values(obj.Data).slice(0, this.props.length));
-
   }
 
   render() {

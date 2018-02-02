@@ -5,16 +5,16 @@ import 'react-table/react-table.css'
 import './TableSimple.css';
 
 
-
+/*
+Define states of  table view
+*/ 
 const LoadingView = () => <div>Loading data...</div>
 
 const ErrorView = () => <div>I'm sorry! Please try again.</div>
   
 const TableView = ( { data, baseUrl } ) => {
 
-
 const columns =  [
-
         {
           Header: <span className="table_heading">Serial number</span>,
           Cell: row => (
@@ -32,7 +32,6 @@ const columns =  [
               <img src={`${baseUrl}${props.value} `}  alt={`ICO ${props.value}`}/>        
             </div>
           )
-
         },
         {
           Header: "ICO name",
@@ -51,15 +50,11 @@ const columns =  [
     data={ data }
     columns={ columns }
     defaultPageSize={10}
-    // showPagination={false}
-    className="-striped -highlight"
-  />
+    className="-striped -highlight" />
   )
 }
 
-   
 const TableSimple= ( { loading, data, baseUrl }) => {
- 
   if( loading) {
     return <LoadingView/>;
   } else if (data) {
@@ -69,7 +64,9 @@ const TableSimple= ( { loading, data, baseUrl }) => {
   }
 };
 
-// Apecify types for TableSimple params
+/*
+Specify types for TableSimple params
+*/ 
 
   TableSimple.propTypes = {
     loading: PropTypes.bool.isRequired,
